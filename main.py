@@ -6,25 +6,16 @@ import os
 from datetime import date
 
 
-boulders = {'blochouse': {1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0,
-                          11:0, 12:0, 13:0, 14:0, 15:0, 16:0, 17:0, 18:0, 19:0, 20:0,
-                          21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0, 28:0, 29:0, 30:0},
-            'boulderclub': {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0,
-                            11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 17: 0, 18: 0, 19: 0, 20: 0,
-                            21: 0, 22: 0, 23: 0, 24: 0, 25: 0, 26: 0, 27: 0, 28: 0, 29: 0, 30: 0},
-            'boulderpoint': {1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0,
-                              11:0, 12:0, 13:0, 14:0, 15:0, 16:0, 17:0, 18:0, 19:0, 20:0,
-                              21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0, 28:0, 29:0, 30:0},
-            'cac': {1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0,
-                    11:0, 12:0, 13:0, 14:0, 15:0, 16:0, 17:0, 18:0, 19:0, 20:0,
-                    21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0, 28:0, 29:0, 30:0},
-            'newton': {1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0,
-                       11:0, 12:0, 13:0, 14:0, 15:0, 16:0, 17:0, 18:0, 19:0, 20:0,
-                       21:0, 22:0, 23:0, 24:0, 25:0, 26:0, 27:0, 28:0, 29:0, 30:0}
-            }
+boulders = {}
 URLs = ['https://blocsummer-graz.at/bloc-summer-sessions/ranking.php?r=2', 'https://blocsummer-graz.at/bloc-summer-sessions/ranking.php?r=3']
 hallen = ['blochouse', 'boulderclub', 'boulderpoint', 'cac', 'newton']
 today = date.today().strftime("%d-%B")
+
+for halle in hallen:
+    buffer = {}
+    for i in range(1, 31):
+         buffer[i] = 0
+    boulders[halle] = buffer
 
 
 def boulderIncrement(halle, boulder):
@@ -48,12 +39,6 @@ def blocScraper(url):
         bouldererLink.append(link)
         #if i == 3:
             #break
-
-
-
-
-
-
 
 
     for link in bouldererLink:
@@ -85,7 +70,8 @@ def blocScraper(url):
 
 
 
-
+if not os.path.exists('plots'):
+    os.mkdir('plots')
 
 if not os.path.exists('plots/' + today):
     os.mkdir('plots/' + today)
@@ -96,23 +82,11 @@ if not os.path.exists('plots/' + today):
 for URL in URLs:
     blocScraper(URL)
 
-#blackCutoff = max/5
-#redCutoff = blackCutoff + blackCutoff
-#orangeCutoff = redCutoff + blackCutoff
-#yellowCutoff = orangeCutoff + blackCutoff
-#greenCutoff = yellowCutoff + blackCutoff
-
-
-
-
 for halle in hallen:
     boulderDict = boulders[halle]
     keys = boulderDict.keys()
     values = boulderDict.values()
     clrs = []
-
-
-
 
     plt.figure(figsize=(15,5))
     plt.bar(keys, values)
