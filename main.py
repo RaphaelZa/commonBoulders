@@ -46,19 +46,18 @@ def blocScraper(url):
         boulderSoup = BeautifulSoup(boulderPage.content, 'html.parser')
         idAll = boulderSoup.find_all("button", {"id" : re.compile('b-.*')})
 
-
-        #print(idAll)
+        print(idAll)
         for i, id in enumerate(idAll):
+
+            number = re.findall("\d+", id.get("id"))[0]
+            n = int(number);
+            print(number)
             halle = ''
-            if i < 30:
+            if n < 33:
                 halle = "blochouse"
-            if i > 29 and i < 60:
+            if n > 32 and n < 62:
                 halle = "boulderclub"
-            if i > 59 and i < 90:
-                halle = "boulderpoint"
-            if i > 89 and i < 120:
-                halle = "cac"
-            if i > 119:
+            if n > 61:
                 halle = "newton"
 
             nummerString = id.get_text()
