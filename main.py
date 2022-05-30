@@ -7,8 +7,8 @@ from datetime import date
 
 
 boulders = {}
-URLs = ['https://blocsummer-graz.at/bloc-summer-sessions/ranking.php?r=2', 'https://blocsummer-graz.at/bloc-summer-sessions/ranking.php?r=3']
-hallen = ['blochouse', 'boulderclub', 'boulderpoint', 'cac', 'newton']
+URLs = ['https://blocsummer-graz.at/bss/ranking.php?r=1&k=2', 'https://blocsummer-graz.at/bss/ranking.php?r=1&k=3']
+hallen = ['blochouse', 'boulderclub', 'newton']
 today = date.today().strftime("%d-%B")
 
 for halle in hallen:
@@ -35,7 +35,7 @@ def blocScraper(url):
 
     for i, b in enumerate(boulderers):
         href = b.find('a').attrs['href']
-        link = 'https://blocsummer-graz.at/bloc-summer-sessions/' + href
+        link = 'https://blocsummer-graz.at/bss/' + href
         bouldererLink.append(link)
         #if i == 3:
             #break
