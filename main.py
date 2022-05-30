@@ -10,6 +10,8 @@ boulders = {}
 URLs = ['https://blocsummer-graz.at/bss/ranking.php?r=1&k=2', 'https://blocsummer-graz.at/bss/ranking.php?r=1&k=3']
 hallen = ['blochouse', 'boulderclub', 'newton']
 today = date.today().strftime("%d-%B")
+boulderclubIds = [9, 10, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61]
+blochouseIds = [1, 2, 3, 4, 5, 6 , 7, 8, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
 
 for halle in hallen:
     buffer = {}
@@ -37,8 +39,8 @@ def blocScraper(url):
         href = b.find('a').attrs['href']
         link = 'https://blocsummer-graz.at/bss/' + href
         bouldererLink.append(link)
-        #if i == 3:
-            #break
+        #print(f"Parsing boulderer number: {i}")
+
 
 
     for link in bouldererLink:
@@ -46,16 +48,15 @@ def blocScraper(url):
         boulderSoup = BeautifulSoup(boulderPage.content, 'html.parser')
         idAll = boulderSoup.find_all("button", {"id" : re.compile('b-.*')})
 
-        print(idAll)
+
         for i, id in enumerate(idAll):
 
             number = re.findall("\d+", id.get("id"))[0]
             n = int(number);
-            print(number)
             halle = ''
-            if n < 33:
+            if n in blochouseIds:
                 halle = "blochouse"
-            if n > 32 and n < 62:
+            if n in boulderclubIds:
                 halle = "boulderclub"
             if n > 61:
                 halle = "newton"
