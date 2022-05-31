@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="32860ab6-01fb-4db1-bc75-0e4e0113fd7f" name="Default Changelist" comment="fixed boulderclub detection">
+    <list default="true" id="32860ab6-01fb-4db1-bc75-0e4e0113fd7f" name="Default Changelist" comment="fixed id enumeration 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -28,7 +28,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "settings.editor.selected.configurable": "advanced.settings"
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "settings.editor.selected.configurable": "Settings.JavaScript.Linters"
   }
 }]]></component>
   <component name="RunManager">
@@ -71,7 +75,7 @@
       <workItem from="1623393681022" duration="8604000" />
       <workItem from="1623668139514" duration="1385000" />
       <workItem from="1653893632285" duration="2495000" />
-      <workItem from="1653896729162" duration="11591000" />
+      <workItem from="1653896729162" duration="17807000" />
     </task>
     <task id="LOCAL-00001" summary="2022 migration">
       <created>1653902873921</created>
@@ -87,7 +91,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653924046274</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fixed id enumeration">
+      <created>1653947233900</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1653947233900</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fixed id enumeration 2">
+      <created>1653947249464</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1653947249464</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,9 +125,22 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2022 migration" />
     <MESSAGE value="fixed boulderclub detection" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed boulderclub detection" />
+    <MESSAGE value="fixed id enumeration" />
+    <MESSAGE value="fixed id enumeration 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed id enumeration 2" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>16</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/commonBoulders$main.coverage" NAME="main Coverage Results" MODIFIED="1653946846537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/commonBoulders$main.coverage" NAME="main Coverage Results" MODIFIED="1654016571233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
